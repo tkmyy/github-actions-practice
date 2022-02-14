@@ -1,11 +1,12 @@
 def main() -> None:
-	a = 1
-	b = 2
-	res = calc_sum(a, b)
+    a = 1
+    b = 2
+    res = calc_sum(a, b)
+    print(res)
 
 
 def calc_sum(a: int, b: int) -> int:
-	return a + b
+    return a + b
 
 
 if __name__ == "__main__":
