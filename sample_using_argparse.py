@@ -12,14 +12,8 @@ def calc_sum(a: int, b: int) -> int:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--num_1",
-        type=int
-    )
-    parser.add_argument(
-        "--num_2",
-        type=int
-    )
+    parser.add_argument("--num_1", type=int)
+    parser.add_argument("--num_2", type=int)
     args = parser.parse_args()
     num_1 = args.num_1
     num_2 = args.num_2
