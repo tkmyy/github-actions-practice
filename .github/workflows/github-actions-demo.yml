@@ -20,3 +20,7 @@ jobs:
         isort --check-only .
         black --check .
         flake8
+    - name: Run mypy
+      run: |
+        pip install mypy
+        mypy .
