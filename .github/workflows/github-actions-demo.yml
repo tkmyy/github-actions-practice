@@ -22,5 +22,5 @@ jobs:
         flake8
     - name: Run mypy
       run: |
-        pip install mypy
+        pip install mypy==0.931
         mypy .
