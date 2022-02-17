@@ -1,6 +1,6 @@
 def main() -> None:
     a = 2
-    b = 3
+    b = 7
     res = calc_sum(a, b)
     print(res)
 
