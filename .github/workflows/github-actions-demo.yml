@@ -7,7 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - run: git log -1
     - name: Set up Python 3.8
       uses: actions/setup-python@v1
       with:
@@ -24,4 +23,5 @@ jobs:
     - name: Run mypy
       run: |
         pip install mypy
-        mypy .
+        filenames = git log -1 --name-only --oneline | sed '1d'
+        mypy filenames
