@@ -22,10 +22,10 @@ jobs:
         flake8
     - name: Run mypy
       run: |
-        if [[ `git log -1 --name-only --oneline | grep '.py'` ]]; then
+        if [[ `git log -1 --name-only --oneline | sed '1d' | grep '.py’` ]]; then
           pip install mypy
-          mypy `git log -1 --name-only --oneline | grep '.py'`         
+          mypy `git log -1 --name-only --oneline | sed '1d' | grep '.py’`         
         else
-          echo 'no files'
+          echo 'No python files. Check skipped.'
           exit 0
         fi
