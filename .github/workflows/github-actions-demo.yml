@@ -27,5 +27,5 @@ jobs:
           mypy $filenames          
         else
           echo 'no files'
-          exit -1
+          exit 0
         fi
