@@ -22,10 +22,10 @@ jobs:
         flake8
     - name: Run mypy
       run: |
-        git log -1 --name-only --oneline | grep '.py'
-        if [ $? = 0 ]; then
+        if [ `git log -1 --name-only --oneline | grep '.py'` ]; then
           pip install mypy
-          mypy $filenames
+          mypy $filenames          
         else
           echo 'no files'
+          exit -1
         fi
