@@ -22,6 +22,10 @@ jobs:
         flake8
     - name: Run mypy
       run: |
-        pip install mypy
         filenames = git log -1 --name-only --oneline | grep '.py'
-        mypy $filenames
+        if [filenames]; then
+          echo 'no files'
+        else
+          pip install mypy
+          mypy $filenames
+        fi
