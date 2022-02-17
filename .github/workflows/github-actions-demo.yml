@@ -24,8 +24,8 @@ jobs:
       run: |
         filenames=`git log -1 --name-only --oneline | grep '.py'`
         if [$filenames]; then
-          echo 'no files'
-        else
           pip install mypy
           mypy $filenames
+        else
+          echo 'no files'
         fi
