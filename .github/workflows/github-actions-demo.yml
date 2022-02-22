@@ -23,7 +23,7 @@ jobs:
     - name: Run mypy
       run: |
         if [[ `git log -1 --name-only --oneline | sed '1d' | grep '.py'` ]]; then
-          pip install mypy
+          pip install mypy==0.931
           mypy `git log -1 --name-only --oneline | sed '1d' | grep '.py'`         
         else
           echo 'No python files. Check skipped.'
